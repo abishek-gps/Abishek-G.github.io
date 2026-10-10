@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abishek G | Data Analyst Portfolio</title>
+
+    <meta name="description" content="Abishek G's portfolio showcasing data analytics, Python, SQL, Power BI, and engineering projects.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #0b1120;
+            --card: #121c30;
+            --accent: #38bdf8;
+            --text: #f1f5f9;
+            --muted: #a7b4c8;
+            --border: #25334b;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            min-height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span,
+        .accent {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        section {
+            padding: 75px 0;
+            scroll-margin-top: 70px;
+        }
+
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 66px);
+            line-height: 1.15;
+            margin: 18px 0;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: var(--accent);
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: var(--muted);
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 1px solid var(--accent);
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #07111e;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .section-intro {
+            max-width: 680px;
+            margin-bottom: 30px;
+        }
+
+        .about-box,
+        .project-card,
+        .skill-card,
+        .education-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .about-box p + p {
+            margin-top: 12px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 28px;
+        }
+
+        .skill-card {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .skill-card span {
+            display: block;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 18px 0;
+        }
+
+        .tag {
+            background: #1b2b43;
+            color: #b8e8ff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .project-link {
+            margin-top: auto;
+            padding-top: 8px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .education-card h3 {
+            margin-bottom: 6px;
+        }
+
+        .education-card + .education-card {
+            margin-top: 16px;
+        }
+
+        .contact-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 22px;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 25px 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 750px) {
+            .container {
+                width: 90%;
+            }
+
+            nav {
+                padding: 15px 0;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                gap: 12px 18px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">Abishek<span>.</span></a>
+
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Home -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="eyebrow">Welcome to my portfolio</div>
+
+                    <h1>Hi, I'm <span class="accent">Abishek G</span></h1>
+
+                    <div class="subtitle">
+                        Aspiring Data Analyst
+                    </div>
+
+                    <p>
+                        Motivated and detail-oriented engineering graduate
+                        with a foundation in data analysis, programming,
+                        and problem-solving. Interested in transforming
+                        raw data into meaningful insights using Python,
+                        SQL, Power BI, and Excel.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            Explore My Projects
+                        </a>
+
+                        <a href="#contact" class="btn">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="container">
+                <div class="section-intro">
+                    <div class="eyebrow">Get to know me</div>
+                    <h2>About Me</h2>
+                </div>
+
+                <div class="about-box">
+                    <p>
+                        I'm Abishek G, an engineering graduate from
+                        SRM TRP Engineering College, affiliated with
+                        Anna University. I have completed Data Science
+                        training and developed skills in Python, SQL,
+                        Power BI, and Excel.
+                    </p>
+
+                    <p>
+                        I enjoy exploring datasets, identifying patterns,
+                        cleaning data, and presenting information in a
+                        clear and useful way. I'm looking for an
+                        opportunity to apply my analytical skills,
+                        learn from experienced professionals, and
+                        contribute to data-driven decisions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-intro">
+                    <div class="eyebrow">What I work with</div>
+                    <h2>Technical Skills</h2>
+                    <p>
+                        Tools and technologies I use for analysis,
+                        reporting, programming, and problem-solving.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        Python
+                        <span>Programming & analysis</span>
+                    </div>
+
+                    <div class="skill-card">
+                        SQL
+                        <span>Queries & data retrieval</span>
+                    </div>
+
+                    <div class="skill-card">
+                        Power BI
+                        <span>Dashboards & reporting</span>
+                    </div>
+
+                    <div class="skill-card">
+                        Excel
+                        <span>Data analysis</span>
+                    </div>
+
+                    <div class="skill-card">
+                        Pandas
+                        <span>Data manipulation</span>
+                    </div>
+
+                    <div class="skill-card">
+                        NumPy
+                        <span>Numerical computing</span>
+                    </div>
+
+                    <div class="skill-card">
+                        Matplotlib
+                        <span>Data visualization</span>
+                    </div>
+
+                    <div class="skill-card">
+                        MySQL
+                        <span>Database management</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-intro">
+                    <div class="eyebrow">What I've worked on</div>
+                    <h2>My Projects</h2>
+                    <p>
+                        Selected projects demonstrating my experience
+                        with data analysis, programming, and engineering.
+                    </p>
+                </div>
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+                        <div class="project-number">PROJECT 01</div>
+                        <h3>Chennai Food Delivery EDA</h3>
+                        <p>
+                            Explored food delivery data to investigate
+                            delivery duration and its relationship with
+                            distance, preparation time, location, and
+                            restaurant type. Focused on data cleaning,
+                            descriptive statistics, and visualization.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">EDA</span>
+                            <span class="tag">Matplotlib</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/YOUR-USERNAME/chennai-food-delivery-eda"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project →
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">PROJECT 02</div>
+                        <h3>Dynamic Comparator-Based Sensor Interface</h3>
+                        <p>
+                            Final-year engineering project focused on
+                            a dynamic comparator-based sensor interface
+                            for smart irrigation applications, supporting
+                            sensor signal comparison for irrigation-related
+                            control.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Sensor Interface</span>
+                            <span class="tag">Comparator</span>
+                            <span class="tag">Smart Irrigation</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/YOUR-USERNAME/dynamic-comparator-smart-irrigation"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project →
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">PROJECT 03</div>
+                        <h3>64T RAM Architecture</h3>
+                        <p>
+                            Designed and simulated an HDL-based RAM
+                            architecture using Verilog and Vivado,
+                            exploring memory operations, control signals,
+                            address selection, and simulation-based
+                            verification.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Verilog</span>
+                            <span class="tag">Vivado</span>
+                            <span class="tag">Digital Design</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/YOUR-USERNAME/64t-ram-architecture"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project →
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">PROJECT 04</div>
+                        <h3>Python Quiz Management System</h3>
+                        <p>
+                            Developed a quiz application with user
+                            registration, login, difficulty levels,
+                            multiple-choice questions, and score
+                            calculation using a graphical interface
+                            and database connectivity.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Tkinter</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/YOUR-USERNAME/python-quiz-management-system"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project →
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">PROJECT 05</div>
+                        <h3>Mobile Recharge Calculator</h3>
+                        <p>
+                            Created a Python application to calculate
+                            GST and the final recharge amount while
+                            displaying plan validity, daily data,
+                            and talk-time details.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">OOP</span>
+                            <span class="tag">GST Calculation</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/YOUR-USERNAME/mobile-recharge-calculator"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project →
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">PROJECT 06</div>
+                        <h3>Clear Drive — Alcohol Detection System</h3>
+                        <p>
+                            Built an alcohol detection concept using
+                            an MQ-3 sensor and a microcontroller to
+                            detect alcohol and trigger alerts and
+                            an ignition-lock mechanism.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">MQ-3 Sensor</span>
+                            <span class="tag">Microcontroller</span>
+                            <span class="tag">Embedded Systems</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/YOUR-USERNAME/clear-drive"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project →
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">PROJECT 07</div>
+                        <h3>Automatic Door Lock System</h3>
+                        <p>
+                            Developed a security system concept using
+                            keypad and RFID authentication with
+                            microcontroller-based locking control.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">RFID</span>
+                            <span class="tag">Keypad</span>
+                            <span class="tag">Embedded Systems</span>
+                        </div>
+                        <a class="project-link"
+                           href="https://github.com/YOUR-USERNAME/automatic-door-lock"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project →
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Education and Training -->
+        <section id="education">
+            <div class="container">
+                <div class="section-intro">
+                    <div class="eyebrow">My background</div>
+                    <h2>Education & Training</h2>
+                </div>
+
+                <div class="education-card">
+                    <h3>Engineering Degree</h3>
+                    <p>SRM TRP Engineering College</p>
+                    <p>Affiliated with Anna University</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>Data Science Training</h3>
+                    <p>
+                        Completed training covering Python, SQL,
+                        Power BI, and Excel.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python Certificate</span>
+                        <span class="tag">SQL Certificate</span>
+                        <span class="tag">Power BI Certificate</span>
+                        <span class="tag">Excel Certificate</span>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <h3>Telecom Technologies</h3>
+                    <p>
+                        BSNL, Tiruchirappalli, Tamil Nadu
+                    </p>
+                    <p>Telecom internship experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-intro">
+                    <div class="eyebrow">Let's connect</div>
+                    <h2>Contact Me</h2>
+                    <p>
+                        I'm interested in Data Analyst opportunities,
+                        learning from industry professionals, and
+                        collaborating on meaningful projects.
+                    </p>
+                </div>
+
+                <div class="contact-box">
+                    <h3>Have an opportunity in mind?</h3>
+                    <p>
+                        Feel free to connect with me through email,
+                        LinkedIn, or GitHub.
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:YOUR-EMAIL@example.com">
+                            Email Me ↗
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/"
+                           target="_blank" rel="noopener noreferrer">
+                            LinkedIn ↗
+                        </a>
+
+                        <a href="https://github.com/YOUR-USERNAME"
+                           target="_blank" rel="noopener noreferrer">
+                            GitHub ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                © 2026 Abishek G | Data Analyst Portfolio
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
