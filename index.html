@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Abishek G | Data Analyst Portfolio</title>
 
-    <meta name="description" content="Abishek G's portfolio showcasing data analytics, Python, SQL, Power BI, and engineering projects.">
+    <meta name="description"
+          content="Abishek G's portfolio showcasing Python, SQL, Power BI, Excel, and data analytics projects.">
 
     <style>
         * {
@@ -47,7 +49,7 @@
             position: sticky;
             top: 0;
             z-index: 10;
-            background: rgba(11, 17, 32, 0.95);
+            background: rgba(11, 17, 32, 0.96);
             border-bottom: 1px solid var(--border);
         }
 
@@ -72,7 +74,7 @@
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 22px;
+            gap: 20px;
         }
 
         .nav-links a {
@@ -86,17 +88,27 @@
 
         section {
             padding: 75px 0;
-            scroll-margin-top: 70px;
+            scroll-margin-top: 75px;
         }
 
-        .hero {
-            min-height: 78vh;
-            display: flex;
-            align-items: center;
+        h1 {
+            font-size: clamp(38px, 6vw, 62px);
+            line-height: 1.15;
+            margin: 18px 0;
         }
 
-        .hero-content {
-            max-width: 760px;
+        h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        p {
+            color: var(--muted);
         }
 
         .eyebrow {
@@ -107,45 +119,67 @@
             font-size: 13px;
         }
 
-        h1 {
-            font-size: clamp(38px, 7vw, 66px);
-            line-height: 1.15;
-            margin: 18px 0;
+        /* HOME SECTION */
+
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
         }
 
-        h2 {
-            font-size: 32px;
-            margin-bottom: 12px;
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
         }
 
         .subtitle {
             color: var(--accent);
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 23px;
+            margin-bottom: 16px;
         }
 
-        p {
-            color: var(--muted);
-        }
-
-        .hero p {
+        .hero-content p {
             max-width: 650px;
             font-size: 17px;
+        }
+
+        .profile-container {
+            flex: 0 0 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 260px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 22px;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
         }
 
         .buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 12px;
             margin-top: 28px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 20px;
+            padding: 11px 16px;
             border: 1px solid var(--accent);
             border-radius: 7px;
             font-weight: bold;
+            font-size: 14px;
             transition: 0.2s;
         }
 
@@ -164,10 +198,13 @@
             margin-bottom: 30px;
         }
 
+        /* ABOUT */
+
         .about-box,
         .project-card,
         .skill-card,
-        .education-card {
+        .education-card,
+        .contact-box {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -178,9 +215,11 @@
             margin-top: 12px;
         }
 
+        /* SKILLS */
+
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 15px;
             margin-top: 28px;
         }
@@ -197,6 +236,8 @@
             font-weight: normal;
             margin-top: 5px;
         }
+
+        /* PROJECTS */
 
         .project-grid {
             display: grid;
@@ -217,16 +258,11 @@
             font-weight: bold;
         }
 
-        .project-card h3 {
-            font-size: 20px;
-            margin: 10px 0;
-        }
-
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 18px 0;
+            margin: 16px 0;
         }
 
         .tag {
@@ -244,20 +280,13 @@
             font-weight: bold;
         }
 
-        .education-card h3 {
-            margin-bottom: 6px;
-        }
+        /* EDUCATION */
 
         .education-card + .education-card {
             margin-top: 16px;
         }
 
-        .contact-box {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
-        }
+        /* CONTACT */
 
         .contact-links {
             display: flex;
@@ -279,6 +308,8 @@
             font-size: 13px;
         }
 
+        /* RESPONSIVE DESIGN */
+
         @media (max-width: 750px) {
             .container {
                 width: 90%;
@@ -294,8 +325,27 @@
                 gap: 12px 18px;
             }
 
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .profile-container {
+                flex: auto;
+            }
+
+            .profile-photo {
+                width: 210px;
+                height: 240px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
             .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .project-grid {
@@ -307,7 +357,7 @@
             }
 
             .hero {
-                min-height: 70vh;
+                min-height: auto;
             }
         }
     </style>
@@ -315,7 +365,7 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <header>
         <div class="container">
             <nav>
@@ -335,24 +385,24 @@
 
     <main>
 
-        <!-- Home -->
+        <!-- HOME WITH PROFILE PHOTO AND RESUME -->
         <section class="hero" id="home">
-            <div class="container">
+            <div class="container hero-container">
+
                 <div class="hero-content">
                     <div class="eyebrow">Welcome to my portfolio</div>
 
-                    <h1>Hi, I'm <span class="accent">Abishek G</span></h1>
+                    <h1>
+                        Hi, I'm <span class="accent">Abishek G</span>
+                    </h1>
 
-                    <div class="subtitle">
-                        Aspiring Data Analyst
-                    </div>
+                    <div class="subtitle">Aspiring Data Analyst</div>
 
                     <p>
                         Motivated and detail-oriented engineering graduate
-                        with a foundation in data analysis, programming,
-                        and problem-solving. Interested in transforming
-                        raw data into meaningful insights using Python,
-                        SQL, Power BI, and Excel.
+                        with skills in Python, SQL, Power BI, and Excel.
+                        I enjoy analyzing data, discovering patterns,
+                        and transforming information into meaningful insights.
                     </p>
 
                     <div class="buttons">
@@ -360,15 +410,30 @@
                             Explore My Projects
                         </a>
 
-                        <a href="#contact" class="btn">
-                            Contact Me
+                        <a href="Resume.pdf"
+                           class="btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View Resume
+                        </a>
+
+                        <a href="Resume.pdf" class="btn" download>
+                            Download Resume
                         </a>
                     </div>
                 </div>
+
+                <div class="profile-container">
+                    <img
+                        src="assets/image.jpeg"
+                        alt="Abishek G profile photo"
+                        class="profile-photo">
+                </div>
+
             </div>
         </section>
 
-        <!-- About -->
+        <!-- ABOUT -->
         <section id="about">
             <div class="container">
                 <div class="section-intro">
@@ -386,43 +451,42 @@
                     </p>
 
                     <p>
-                        I enjoy exploring datasets, identifying patterns,
-                        cleaning data, and presenting information in a
-                        clear and useful way. I'm looking for an
-                        opportunity to apply my analytical skills,
-                        learn from experienced professionals, and
-                        contribute to data-driven decisions.
+                        I enjoy exploring datasets, cleaning data,
+                        identifying patterns, and presenting findings
+                        clearly. I am seeking an opportunity to apply
+                        my analytical skills and contribute to
+                        data-driven decision-making.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Skills -->
+        <!-- SKILLS -->
         <section id="skills">
             <div class="container">
                 <div class="section-intro">
                     <div class="eyebrow">What I work with</div>
                     <h2>Technical Skills</h2>
                     <p>
-                        Tools and technologies I use for analysis,
-                        reporting, programming, and problem-solving.
+                        Tools and technologies for analysis,
+                        programming, reporting, and visualization.
                     </p>
                 </div>
 
                 <div class="skills-grid">
                     <div class="skill-card">
                         Python
-                        <span>Programming & analysis</span>
+                        <span>Programming and analysis</span>
                     </div>
 
                     <div class="skill-card">
                         SQL
-                        <span>Queries & data retrieval</span>
+                        <span>Queries and data retrieval</span>
                     </div>
 
                     <div class="skill-card">
                         Power BI
-                        <span>Dashboards & reporting</span>
+                        <span>Dashboards and reporting</span>
                     </div>
 
                     <div class="skill-card">
@@ -453,15 +517,15 @@
             </div>
         </section>
 
-        <!-- Projects -->
+        <!-- PROJECTS -->
         <section id="projects">
             <div class="container">
                 <div class="section-intro">
                     <div class="eyebrow">What I've worked on</div>
                     <h2>My Projects</h2>
                     <p>
-                        Selected projects demonstrating my experience
-                        with data analysis, programming, and engineering.
+                        Selected projects in data analytics,
+                        Python programming, and engineering.
                     </p>
                 </div>
 
@@ -471,11 +535,11 @@
                         <div class="project-number">PROJECT 01</div>
                         <h3>Chennai Food Delivery EDA</h3>
                         <p>
-                            Explored food delivery data to investigate
-                            delivery duration and its relationship with
-                            distance, preparation time, location, and
-                            restaurant type. Focused on data cleaning,
-                            descriptive statistics, and visualization.
+                            Analyzed food delivery data to explore
+                            delivery duration and its relationship
+                            with distance, preparation time, area,
+                            and restaurant type. Focused on data
+                            cleaning, statistics, and visualization.
                         </p>
                         <div class="tags">
                             <span class="tag">Python</span>
@@ -492,17 +556,16 @@
 
                     <article class="project-card">
                         <div class="project-number">PROJECT 02</div>
-                        <h3>Dynamic Comparator-Based Sensor Interface</h3>
+                        <h3>Smart Irrigation Sensor Interface</h3>
                         <p>
-                            Final-year engineering project focused on
-                            a dynamic comparator-based sensor interface
-                            for smart irrigation applications, supporting
-                            sensor signal comparison for irrigation-related
-                            control.
+                            Designed a dynamic comparator-based sensor
+                            interface for smart irrigation applications,
+                            focusing on sensor signal comparison and
+                            irrigation-related control.
                         </p>
                         <div class="tags">
-                            <span class="tag">Sensor Interface</span>
                             <span class="tag">Comparator</span>
+                            <span class="tag">Sensors</span>
                             <span class="tag">Smart Irrigation</span>
                         </div>
                         <a class="project-link"
@@ -516,11 +579,10 @@
                         <div class="project-number">PROJECT 03</div>
                         <h3>64T RAM Architecture</h3>
                         <p>
-                            Designed and simulated an HDL-based RAM
+                            Modeled and simulated an HDL-based RAM
                             architecture using Verilog and Vivado,
-                            exploring memory operations, control signals,
-                            address selection, and simulation-based
-                            verification.
+                            exploring memory operations, control
+                            signals, addressing, and verification.
                         </p>
                         <div class="tags">
                             <span class="tag">Verilog</span>
@@ -538,10 +600,9 @@
                         <div class="project-number">PROJECT 04</div>
                         <h3>Python Quiz Management System</h3>
                         <p>
-                            Developed a quiz application with user
+                            Developed a quiz application with
                             registration, login, difficulty levels,
-                            multiple-choice questions, and score
-                            calculation using a graphical interface
+                            multiple-choice questions, score calculation,
                             and database connectivity.
                         </p>
                         <div class="tags">
@@ -561,14 +622,13 @@
                         <h3>Mobile Recharge Calculator</h3>
                         <p>
                             Created a Python application to calculate
-                            GST and the final recharge amount while
-                            displaying plan validity, daily data,
-                            and talk-time details.
+                            GST and total recharge cost while displaying
+                            plan validity, daily data, and talk-time details.
                         </p>
                         <div class="tags">
                             <span class="tag">Python</span>
                             <span class="tag">OOP</span>
-                            <span class="tag">GST Calculation</span>
+                            <span class="tag">Calculations</span>
                         </div>
                         <a class="project-link"
                            href="https://github.com/YOUR-USERNAME/mobile-recharge-calculator"
@@ -579,12 +639,11 @@
 
                     <article class="project-card">
                         <div class="project-number">PROJECT 06</div>
-                        <h3>Clear Drive — Alcohol Detection System</h3>
+                        <h3>Clear Drive — Alcohol Detection</h3>
                         <p>
-                            Built an alcohol detection concept using
-                            an MQ-3 sensor and a microcontroller to
-                            detect alcohol and trigger alerts and
-                            an ignition-lock mechanism.
+                            Developed an alcohol detection system concept
+                            using an MQ-3 sensor and microcontroller to
+                            trigger alerts and an ignition-lock mechanism.
                         </p>
                         <div class="tags">
                             <span class="tag">MQ-3 Sensor</span>
@@ -602,7 +661,7 @@
                         <div class="project-number">PROJECT 07</div>
                         <h3>Automatic Door Lock System</h3>
                         <p>
-                            Developed a security system concept using
+                            Created a security system concept using
                             keypad and RFID authentication with
                             microcontroller-based locking control.
                         </p>
@@ -622,7 +681,7 @@
             </div>
         </section>
 
-        <!-- Education and Training -->
+        <!-- EDUCATION AND TRAINING -->
         <section id="education">
             <div class="container">
                 <div class="section-intro">
@@ -639,7 +698,7 @@
                 <div class="education-card">
                     <h3>Data Science Training</h3>
                     <p>
-                        Completed training covering Python, SQL,
+                        Completed training in Python, SQL,
                         Power BI, and Excel.
                     </p>
                     <div class="tags">
@@ -652,15 +711,29 @@
 
                 <div class="education-card">
                     <h3>Telecom Technologies</h3>
-                    <p>
-                        BSNL, Tiruchirappalli, Tamil Nadu
-                    </p>
+                    <p>BSNL, Tiruchirappalli, Tamil Nadu</p>
                     <p>Telecom internship experience</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>Resume</h3>
+                    <p>View my resume for further details about my qualifications and experience.</p>
+                    <div class="buttons">
+                        <a href="Resume.pdf"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-primary">
+                            Open Resume
+                        </a>
+                        <a href="Resume.pdf" download class="btn">
+                            Download PDF
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact -->
+        <!-- CONTACT -->
         <section id="contact">
             <div class="container">
                 <div class="section-intro">
@@ -690,7 +763,7 @@
                             LinkedIn ↗
                         </a>
 
-                        <a href="https://github.com/YOUR-USERNAME"
+                        <a href="https://github.com/abishek-gps"
                            target="_blank" rel="noopener noreferrer">
                             GitHub ↗
                         </a>
@@ -701,11 +774,10 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>
-                © 2026 Abishek G | Data Analyst Portfolio
-            </p>
+            <p>© 2026 Abishek G | Data Analyst Portfolio</p>
         </div>
     </footer>
 
